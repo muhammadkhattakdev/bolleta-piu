@@ -17,27 +17,12 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-
-
-const allowedOrigins = ['https://bolleta-piu-basm.vercel.app'];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true
+  origin: process.env.CLIENT_URL,
+  credentials: true,
+  methods: ['GET', "PUT", "POST", "DELETE"]
 }));
-
-app.options('*', cors()); // Important for preflight
-
-
-
-
-app.use(express.json());
+app.options('*', cors());
 
 const uploadsDir = path.join(__dirname, 'uploads');
 const documentsDir = path.join(uploadsDir, 'documents');
