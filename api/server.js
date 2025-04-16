@@ -30,26 +30,21 @@ if (!fs.existsSync(documentsDir)) {
   fs.mkdirSync(documentsDir);
 }
 
-// API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/documents', documentRoutes);
 app.use('/api/calculations', calculationRoutes);
 
-// Health check endpoint
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'Server is running' });
 });
 
-// Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
-  // Set static folder
   const clientBuildPath = path.resolve(__dirname, '../client/build');
   app.use(express.static(clientBuildPath));
 
-  // Any route that doesn't match API routes will be served the React app
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(clientBuildPath, 'index.html'));
   });
 }
 
-export default app;
+module.exports = app;
