@@ -1,0 +1,75 @@
+:root {
+    --primary-blue: #467bc1;
+    --primary-red: #ff3130;
+    --white: #ffffff;
+    --light-gray: #f5f7fa;
+    --dark-gray: #333333;
+    --border-gray: #e0e0e0;
+    --text-gray: #6b7280;
+    --sidebar-width: 240px;
+    --sidebar-collapsed-width: 70px;
+    --navbar-height: 70px;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition-speed: 0.3s;
+  }
+
+  .dashboard-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--light-gray);
+  }
+  
+  .dashboard-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    transition: margin-left var(--transition-speed) ease;
+    width: calc(100% - var(--sidebar-width));
+  }
+  
+  .dashboard-content.expanded {
+    margin-left: var(--sidebar-collapsed-width);
+    width: calc(100% - var(--sidebar-collapsed-width));
+  }
+  
+  .dashboard-main {
+    padding: 24px;
+    height: calc(100vh - var(--navbar-height));
+    overflow-y: auto;
+  }
+  
+  /* Scrollbar styling */
+  .dashboard-main::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .dashboard-main::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .dashboard-main::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .dashboard-main::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 992px) {
+    .dashboard-content {
+      margin-left: var(--sidebar-collapsed-width);
+      width: calc(100% - var(--sidebar-collapsed-width));
+    }
+    
+    .dashboard-main {
+      padding: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-content {
+      margin-left: 0;
+      width: 100%;
+    }
+  }

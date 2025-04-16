@@ -1,0 +1,145 @@
+.confirm-modal {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  animation: modal-appear 0.3s ease-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.confirm-modal.danger .modal-header {
+  border-bottom-color: rgba(255, 49, 48, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.modal-header h2 {
+  font-size: 18px;
+  color: var(--dark-gray);
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-gray);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+}
+
+.modal-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-icon {
+  margin-bottom: 16px;
+}
+
+.warning-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--primary-red);
+}
+
+.modal-message {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--dark-gray);
+  max-width: 360px;
+  margin: 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-gray);
+}
+
+.secondary-btn, .primary-btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondary-btn {
+  background-color: var(--white);
+  color: var(--dark-gray);
+  border: 1px solid var(--border-gray);
+}
+
+.secondary-btn:hover {
+  background-color: var(--light-gray);
+}
+
+.primary-btn {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+}
+
+.primary-btn:hover {
+  background-color: #003d91;
+}
+
+.danger-btn {
+  background-color: var(--primary-red);
+}
+
+.danger-btn:hover {
+  background-color: #e52e2d;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .confirm-modal {
+    max-width: 90%;
+  }
+  
+  .modal-footer {
+    flex-direction: column-reverse;
+  }
+  
+  .secondary-btn, .primary-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,320 @@
+/* Forgot Password Page Styles */
+.forgot-password-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--light-gray);
+    padding: 20px;
+  }
+  
+  .forgot-password-card {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    height: auto;
+  }
+  
+  /* Card Left - Form Side */
+  .card-left {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-blue);
+  }
+  
+  .logo-container {
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  
+  .signin-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 8px;
+  }
+  
+  .signin-subtitle {
+    font-size: 16px;
+    color: var(--white);
+    margin-top: 10px;
+  }
+  
+  /* Form styling */
+  .forgot-password-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+  }
+  
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .forgot-password-form input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  .forgot-password-form input:focus {
+    border-color: var(--primary-blue);
+  }
+  
+  .input-icon {
+    position: absolute;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--primary-blue);
+  }
+  
+  /* Custom icons using pseudo elements */
+  .email-icon:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-blue);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/%3E%3Cpolyline points='22,6 12,13 2,6'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/%3E%3Cpolyline points='22,6 12,13 2,6'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+  }
+  
+  .password-icon:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-blue);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+  }
+  
+  .code-icon:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-blue);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 18 22 12 16 6'%3E%3C/polyline%3E%3Cpolyline points='8 6 2 12 8 18'%3E%3C/polyline%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 18 22 12 16 6'%3E%3C/polyline%3E%3Cpolyline points='8 6 2 12 8 18'%3E%3C/polyline%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+  }
+  
+  .input-hint {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 6px;
+  }
+  
+  /* Button styling */
+  .submit-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .submit-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .back-button, .resend-button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .back-button {
+    background-color: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .back-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .resend-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border: none;
+  }
+  
+  .resend-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .back-button:disabled, .resend-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .form-footer {
+    margin-top: 24px;
+    text-align: center;
+    color: var(--white);
+    font-size: 14px;
+  }
+  
+  .form-footer a, .signin-link {
+    color: var(--white);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  
+  .form-footer a:hover, .signin-link:hover {
+    opacity: 0.8;
+  }
+  
+  .signin-link {
+    display: inline-block;
+    margin-top: 16px;
+  }
+  
+  /* Error and success messages */
+  .error-message, .success-message {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .error-message {
+    background-color: rgba(255, 49, 48, 0.15);
+    border-left: 4px solid var(--primary-red);
+    color: #ffffff;
+  }
+  
+  .success-message {
+    background-color: rgba(16, 185, 129, 0.15);
+    border-left: 4px solid #10b981;
+    color: #ffffff;
+  }
+  
+  /* Card Right - Illustration Side */
+  .card-right {
+    flex: 1;
+    background-color: var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .reset-password-illustration {
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none"><rect width="500" height="500" fill="%23f5f7fa"/><path d="M250 150C194.772 150 150 194.772 150 250C150 305.228 194.772 350 250 350C305.228 350 350 305.228 350 250C350 194.772 305.228 150 250 150ZM250 330C205.817 330 170 294.183 170 250C170 205.817 205.817 170 250 170C294.183 170 330 205.817 330 250C330 294.183 294.183 330 250 330Z" fill="%23004bad"/><path d="M250 190C239.5 190 230 198.5 230 210V250C230 260.5 239.5 270 250 270C260.5 270 270 260.5 270 250V210C270 198.5 260.5 190 250 190Z" fill="%23004bad"/><path d="M320 235H300V265H320V235Z" fill="%23ff3130"/><path d="M200 235H180V265H200V235Z" fill="%23ff3130"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 900px) {
+    .forgot-password-card {
+      flex-direction: column;
+      max-width: 500px;
+    }
+  
+    .card-right {
+      display: none;
+    }
+  
+    .card-left {
+      padding: 30px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .card-left {
+      padding: 20px;
+    }
+  
+    .logo-container {
+      margin-bottom: 20px;
+    }
+  
+    .forgot-password-form input {
+      padding: 10px 14px;
+    }
+  
+    .submit-button {
+      padding: 10px;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+    }
+    
+    .back-button, .resend-button {
+      width: 100%;
+    }
+  }

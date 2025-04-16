@@ -1,0 +1,42 @@
+
+.chart-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(to bottom, #fcfcfc, #f7f9fc);
+    padding: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .pie-chart, .bar-chart {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+  
+  /* Add animation for hover effect */
+  .chart-wrapper:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+  
+  /* Media queries */
+  @media (max-width: 768px) {
+    .chart-wrapper {
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media print {
+    .chart-wrapper {
+      page-break-inside: avoid;
+      box-shadow: none;
+      border: 1px solid #e0e0e0;
+    }
+  }
