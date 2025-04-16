@@ -21,6 +21,7 @@ app.use(cors({
   origin: process.env.CLIENT_URL,
   credentials: true
 }));
+app.options('*', cors());
 
 const uploadsDir = path.join(__dirname, 'uploads');
 const documentsDir = path.join(uploadsDir, 'documents');
