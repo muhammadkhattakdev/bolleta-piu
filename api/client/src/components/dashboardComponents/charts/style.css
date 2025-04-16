@@ -19,7 +19,6 @@
   
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
   
-  /* Add animation for hover effect */
   .chart-wrapper:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);

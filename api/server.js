@@ -1,12 +1,17 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const path = require('path');
-const fs = require('fs');
-const authRoutes = require('./routes/auth');
-const documentRoutes = require('./routes/document');
-const calculationRoutes = require('./routes/calculation');
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import path from 'path';
+import fs from 'fs';
+import authRoutes from './routes/auth.js';
+import documentRoutes from './routes/document.js';
+import calculationRoutes from './routes/calculation.js';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 dotenv.config();
 
@@ -17,6 +22,16 @@ app.use(cors({
   origin: process.env.CLIENT_URL,
   credentials: true
 }));
+
+
+app.use(express.static(path.join(__dirname, "/client/dist")))
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/dist/index.html"))
+})
+
+
+
 
 const uploadsDir = path.join(__dirname, 'uploads');
 const documentsDir = path.join(uploadsDir, 'documents');
