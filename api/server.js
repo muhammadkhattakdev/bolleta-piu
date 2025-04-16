@@ -20,26 +20,26 @@ app.use(express.json());
 
 
 
-const allowedOrigins = [
-  process.env.CLIENT_URL,
-  'https://bolleta-piu-basm.vercel.app',
-  'https://bolleta-piu.vercel.app'
-];
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://bolleta-piu-basm.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  
+  next();
+});
 
 app.use(cors({
-  origin: function(origin, callback) {
-    if(!origin) return callback(null, true);
-    
-    if(allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  },
+  origin: 'https://bolleta-piu-basm.vercel.app',
   credentials: true,
-  methods: ['GET', 'PUT', 'POST', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
+
 
 
 const uploadsDir = path.join(__dirname, 'uploads');
