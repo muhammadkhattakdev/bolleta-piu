@@ -17,10 +17,10 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-// app.use(cors({
-//   origin: "*",
-//   credentials: true
-// }));
+app.use(cors({
+  origin: "https://bolleta-piu-basm.vercel.app",
+  credentials: true
+}));
 
 const uploadsDir = path.join(__dirname, 'uploads');
 const documentsDir = path.join(uploadsDir, 'documents');
