@@ -1,0 +1,20 @@
+{
+    "name": "bolletta-piu",
+    "version": "1.0.0",
+    "description": "BOLLETTA più utility bill calculation service",
+    "private": true,
+    "scripts": {
+      "start": "node server/server.js",
+      "server": "nodemon server/server.js",
+      "client": "cd client && npm run dev",
+      "dev": "concurrently \"npm run server\" \"npm run client\"",
+      "build": "cd client && npm run build",
+      "install-all": "npm install && cd client && npm install && cd ../server && npm install"
+    },
+    "dependencies": {
+      "concurrently": "^8.2.2"
+    },
+    "devDependencies": {
+      "nodemon": "^3.0.1"
+    }
+  }
