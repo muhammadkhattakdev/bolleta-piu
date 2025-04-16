@@ -18,7 +18,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "https://bolleta-piu-basm.vercel.app",
+  origin: process.env.CLIENT_URL,
   credentials: true
 }));
 
